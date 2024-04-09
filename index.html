@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stress Level Detection</title>
+    <style>
+        /* General styles */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Chat container styles */
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Chat interface styles */
+        #chatbot-interface {
+            margin-top: 20px;
+            overflow-y: auto;
+            max-height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .bot-message {
+            text-align: left;
+            color: #333;
+        }
+
+        /* Result button styles */
+        #result-button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <h1>Stress Level Detection</h1>
+        <h3>Our stress level detection system is analyzing your data.</h3>
+
+        <!-- Chat interface -->
+        <div id="chatbot-interface">
+            <div class="bot-message">Analyzing...</div>
+        </div>
+
+        <!-- Start Detection button -->
+        <button class="button"><a href="/my-link">Start Detection</a></button>
+
+        <!-- Result button -->
+        <button id="result-button" onclick="redirectToResultPage()">View Results</button>
+    </div>
+
+    <script>
+        // Function to redirect to result page
+        function redirectToResultPage() {
+            window.location.href = "{{ url_for('display_stress_level') }}";
+        }
+    </script>
+
+</body>
+
+</html>
